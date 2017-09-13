@@ -44,5 +44,6 @@ public class SearchItineraryActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 }
