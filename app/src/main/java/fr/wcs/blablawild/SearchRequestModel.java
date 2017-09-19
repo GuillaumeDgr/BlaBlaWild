@@ -2,7 +2,6 @@ package fr.wcs.blablawild;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import java.util.Date;
 
 /**

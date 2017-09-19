@@ -58,7 +58,9 @@
         android:ems="10"
         android:gravity="center"
         android:hint="21/02/2017-16:00"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:focusable="false"
+        android:clickable="true"/>
 
     <Button
         android:id="@+id/buttonSearch"
