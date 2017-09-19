@@ -1,13 +1,13 @@
 package fr.wcs.blablawild;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
-
+import android.widget.Toast;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
 
@@ -19,18 +19,19 @@ public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_search_itinerary_results_list);
 
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy-hh:mm");
+
         // Intent
-        Intent intent = getIntent();
-        String message = intent.getStringExtra("lieuDepart");
-        String message2 = intent.getStringExtra("lieuDepart2");
-        setTitle(message + " >> " + message2);
+        SearchRequestModel searchRequestModel = getIntent().getExtras().getParcelable("searchRequestModel");
+        String depart = searchRequestModel.getDepart();
+        String destination = searchRequestModel.getDestination();
+        Date date = searchRequestModel.getDateTrajet();
+        Toast.makeText(ViewSearchItineraryResultsListActivity.this, sdf.format(date) , Toast.LENGTH_SHORT).show();
+        setTitle(depart + " >> " + destination);
 
         // Array List
         mListViewResults = (ListView) findViewById(R.id.listView);
         ArrayList<TripResultModel> results = new ArrayList<>();
-
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy-hh:mm");
-
         try {
             results.add(new TripResultModel("Bruce", sdf.parse("21/02/2017-15:30"), 15));
             results.add(new TripResultModel("Clark", sdf.parse("21/02/2017-16:00"), 20));
@@ -39,7 +40,6 @@ public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
         } catch (ParseException e) {
         }
         mResultsAdapter = new TripResultAdapter(this, results);
-
         mListViewResults.setAdapter(mResultsAdapter);
     }
 }
