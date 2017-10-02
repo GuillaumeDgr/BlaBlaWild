@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Départ" />
+        android:text="@string/textViewDepart" />
 
     <EditText
         android:id="@+id/editTextSearchDeparture"
@@ -21,7 +21,7 @@
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Paris"
+        android:hint="@string/hintDepart"
         android:inputType="textPersonName" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Destination" />
+        android:text="@string/textViewDestination" />
 
     <EditText
         android:id="@+id/editTextSearchDestination"
@@ -39,7 +39,7 @@
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="London"
+        android:hint="@string/hintDestination"
         android:inputType="textPersonName" />
 
     <TextView
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Date" />
+        android:text="@string/textViewDate" />
 
     <EditText
         android:id="@+id/editTextSearchDate"
@@ -57,8 +57,7 @@
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="21/02/2017-16:00"
-        android:inputType="textPersonName"
+        android:hint="@string/hintDate"
         android:focusable="false"
         android:clickable="true"/>
 
@@ -68,6 +67,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Button" />
+        android:text="@string/button_text2" />
 
 </LinearLayout>

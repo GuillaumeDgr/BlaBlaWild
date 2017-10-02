@@ -4,18 +4,13 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 public class SearchItineraryActivity extends AppCompatActivity {
@@ -75,7 +70,7 @@ public class SearchItineraryActivity extends AppCompatActivity {
                 dateContent = editTextSearchDate.getText().toString();
 
                 if ((departContent.equals("")) || (destinationContent.equals(""))) {
-                    Toast.makeText(SearchItineraryActivity.this, "Veuillez renseigner votre départ et votre destination", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SearchItineraryActivity.this, getResources().getString(R.string.toasttext) , Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(getApplicationContext(), ViewSearchItineraryResultsListActivity.class);
                     SearchRequestModel searchRequestModel = new SearchRequestModel(departContent, destinationContent, myCalendar.getTime());

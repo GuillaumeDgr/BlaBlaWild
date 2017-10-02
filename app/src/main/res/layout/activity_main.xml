@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Rechercher un itinéraire"
+        android:text="@string/button_text"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="center_vertical|center_horizontal" />
 
